@@ -3,54 +3,48 @@
 Deployed URL (frontend) :- https://blog-website-g1ce.vercel.app/index.html
 
 
-📝 Blog Website
+## 📝 Blog Website
 
-A simple Blog Website built with Node.js, Express, MongoDB, and Vanilla JS where:
+- A simple Blog Website built with Node.js, Express, MongoDB, and Vanilla JS where:
 
-Admin can log in, create, edit, and delete blogs.
+- Admin can log in, create, edit, and delete blogs.
 
-Users can only view blogs (no login required).
+- Users can only view blogs (no login required).
 
-Blog images are uploaded and served from the backend.
+- Blog images are uploaded and served from the backend.
 
-🚀 Features
-👨‍💻 Admin Panel
+## 🚀 Features
+- 👨‍💻 Admin Panel
 
-Secure login/logout system.
+- Secure login/logout system.
 
-Create new blogs (with title, content, and image).
+- Create new blogs (with title, content, and image).
 
-Edit existing blogs.
+- Edit existing blogs.
 
-Delete blogs.
+- Delete blogs.
 
-Blogs are only visible to users after being added by admin.
+- Blogs are only visible to users after being added by admin.
 
-🌍 User Side
+## 🌍 User Side
 
-View all blogs in a clean UI.
+- View all blogs in a clean UI.
 
-Each blog shows title, content snippet, image, and date.
+- Each blog shows title, content snippet, image, and date.
 
-No login required for users.
+- No login required for users.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Frontend: HTML, CSS (Tailwind/Custom), JavaScript
+- Frontend: HTML, CSS (Tailwind), JavaScript
 
-Backend: Node.js, Express
+- Backend: Node.js, Express
 
-Database: MongoDB (Mongoose ORM)
+- Database: MongoDB (Mongoose ORM)
 
-Authentication: JWT (JSON Web Token)
-
-Deployment: Render (Backend + Static Files)
+- Authentication: JWT (JSON Web Token)
 
 
-👥 User Workflow
-
-Visit index.html.
-
-All blogs added by admin are visible.
-
-Users cannot add, edit, or delete blogs.
+### Note
+- All blogs added by admin are visible.
+- Users cannot add, edit, or delete blogs.

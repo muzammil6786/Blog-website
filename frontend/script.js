@@ -1,4 +1,4 @@
-const BASE_URL = 'https://blog-website-dva5.onrender.com';
+const BASE_URL = 'http://localhost:5000';
 const token = localStorage.getItem('token');
 
 // =================== LOGIN PAGE ===================

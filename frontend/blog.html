@@ -207,7 +207,7 @@
 
     const urlParams = new URLSearchParams(window.location.search);
     const page = parseInt(urlParams.get('page')) || 1;
-    const limit = 5; // Show 5 blogs per page
+    const limit = 6; // Show 6 blogs per page
 
     // Fetch Blogs
     fetch(`${BASE_URL}/api/blogs?page=${page}&limit=${limit}`)

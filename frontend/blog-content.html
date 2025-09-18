@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Blog Content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for rendering markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-roboto">
+
+    <!-- Container -->
+    <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+
+        <!-- Back Button -->
+        <a href="blog.html" class="text-blue-600 hover:underline mb-6 inline-block text-sm sm:text-base">← Back to
+            Blogs</a>
+
+        <!-- Blog Content -->
+        <div id="blog-content" class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
+            <h1 id="blog-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"></h1>
+            <img id="blog-image" class="rounded-xl mb-4 sm:mb-6 w-full object-cover hidden" alt="Blog Image">
+            <p id="blog-date" class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6"></p>
+            <div id="blog-body" class="prose sm:prose-lg md:prose-xl max-w-full text-gray-700 leading-relaxed"></div>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = "http://localhost:5000";
+        const blogTitle = document.getElementById("blog-title");
+        const blogImage = document.getElementById("blog-image");
+        const blogDate = document.getElementById("blog-date");
+        const blogBody = document.getElementById("blog-body");
+
+        // Get blog ID from query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get("id");
+
+        if (!blogId) {
+            blogBody.innerHTML = "<p class='text-red-500'>No blog ID provided.</p>";
+        } else {
+            fetch(`${BASE_URL}/api/blogs/${blogId}`)
+                .then(res => res.json())
+                .then(blog => {
+                    blogTitle.textContent = blog.title;
+                    if (blog.imageUrl) {
+                        blogImage.src = BASE_URL + blog.imageUrl;
+                        blogImage.classList.remove("hidden");
+                    }
+                    blogDate.textContent = "Published on " + new Date(blog.createdAt).toLocaleDateString();
+                    blogBody.innerHTML = marked.parse(blog.content);
+                })
+                .catch(err => {
+                    blogBody.innerHTML = "<p class='text-red-500'>Error loading blog.</p>";
+                    console.error(err);
+                });
+        }
+    </script>
+</body>
+
+</html>

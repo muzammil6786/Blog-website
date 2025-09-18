@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog - Home</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lora:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        /* Floating labels */
+        .form-floating {
+            position: relative;
+        }
+    
+        .form-floating input,
+        .form-floating textarea {
+            width: 100%;
+            padding: 1rem 0.75rem 0.25rem;
+            border: 2px solid #ccc;
+            border-radius: 0.75rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+    
+        .form-floating label {
+            position: absolute;
+            top: 1rem;
+            left: 0.75rem;
+            color: #333;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+    
+        .form-floating input:focus+label,
+        .form-floating input:not(:placeholder-shown)+label,
+        .form-floating textarea:focus+label,
+        .form-floating textarea:not(:placeholder-shown)+label {
+            top: -0.5rem;
+            left: 0.75rem;
+            font-size: 0.75rem;
+            color: #3b82f6;
+            background: white;
+            padding: 0 0.25rem;
+        }
+    
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+    
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    </head>
+    
+    <body class="font-roboto bg-gray-50 text-gray-900">
+    
+        <!-- Navbar -->
+        <nav class="fixed w-full bg-white shadow-md z-50">
+            <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+                <div class="text-2xl font-bold text-blue-600">My Blog</div>
+    
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#blog" class="hover:text-blue-600 transition">Blog</a>
+                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                </div>
+    
+                <!-- Hamburger Icon -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-2xl focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+                <a href="#home" class="block py-2 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="block py-2 hover:text-blue-600 transition">About</a>
+                <a href="#blog" class="block py-2 hover:text-blue-600 transition">Blog</a>
+                <a href="#contact" class="block py-2 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </nav>
+    
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center fade-in"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1600&q=80'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="max-w-7xl mx-auto px-4 py-20 text-center relative z-10 text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Welcome to MyBlog</h1>
+                <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">Explore tutorials, stories, and insights
+                    on technology, productivity, and lifestyle. Stay informed, inspired, and motivated!</p>
+                <a href="blog.html"
+                    class="bg-purple-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Explore Blogs</a>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 md:flex md:items-center md:gap-12">
+            <!-- Image Container -->
+            <div class="w-full md:w-1/2 max-w-md mx-auto mb-8 md:mb-0">
+                <img src="../images/static-img/img1.jpg"
+                    class="w-full h-auto rounded-lg object-cover" alt="Blog Image">
+            </div>
+    
+            <!-- Text Container -->
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">About MyBlog</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    MyBlog is your go-to platform for everything tech, lifestyle, and personal growth.
+                    We aim to provide high-quality tutorials, insightful stories, and practical tips to help you succeed.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Our team of passionate writers shares their experiences, industry insights, and life lessons to inspire
+                    and educate our readers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 md:py-24 bg-gray-50 fade-in">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Posts</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Cards (sample 6 cards) -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img3.jpg"
+                            alt="Blog Image"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">Mastering JavaScript in 2025</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">Learn the latest tips, tricks, and best practices
+                            to become a proficient JavaScript developer quickly.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                    <!-- Repeat similar cards 5 more times with different images/text -->
+                    <!-- Blog Card 2 -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img4.png"
+                            alt="Blog Image"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">Top 10 Productivity Tips</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">Boost your efficiency with practical strategies
+                            for work, time management, and focus.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                    <!-- Blog Card 3 -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img5.jpeg"
+                            alt="Blog Image"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">Designing Beautiful Interfaces</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">A complete guide to UI/UX design principles that
+                            make your apps visually stunning.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                    <!-- Blog Card 4 -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img6.jpg"
+                            alt="Blog Image"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">AI and the Future of Tech</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">Explore how AI is reshaping industries and what
+                            it means for developers.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                    <!-- Blog Card 5 -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img2.jpg"
+                            alt="Blog Image"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">Healthy Work-Life Balance</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">Advice to balance career, hobbies, and personal
+                            life without burnout.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                    <!-- Blog Card 6 -->
+                    <a href="blog.html"
+                        class="group block bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 duration-300 cursor-pointer">
+                        <img src="../images/static-img/img1.jpg"
+                            class="rounded-xl mb-4 w-full h-48 object-cover transition-transform transform group-hover:scale-105 duration-300">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-black">Getting Started with Python</h3>
+                        <p class="text-gray-700 mb-2 text-sm sm:text-base">Beginner-friendly guide to Python programming,
+                            from setup to first script.</p>
+                        <span class="text-blue-600 font-semibold group-hover:underline">Read More →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Newsletter Section -->
+        <section class="py-16 md:py-20 bg-gray-100 fade-in">
+            <div class="max-w-3xl mx-auto text-center px-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+                <p class="text-gray-700 mb-6">Stay updated with the latest blog posts, tips, and stories delivered straight
+                    to your inbox.</p>
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email" required
+                        class="w-full sm:flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-white fade-in">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Get in Touch</h2>
+                <p class="text-gray-700 mb-12">Have questions, suggestions, or want to collaborate? Reach out to us!</p>
+    
+                <!-- Dummy Contact Info -->
+                <div class="flex flex-col sm:flex-row justify-around mb-12 gap-6">
+                    <div><i class="fas fa-envelope text-blue-600 mr-2"></i> email@example.com</div>
+                    <div><i class="fas fa-phone text-green-600 mr-2"></i> +91 12345 67890</div>
+                    <div><i class="fas fa-map-marker-alt text-red-600 mr-2"></i> 123 Main St, City, Country</div>
+                </div>
+    
+                <form id="contact-form" class="space-y-6">
+                    <div class="form-floating">
+                        <input type="text" name="user_name" placeholder="Your Name" required>
+                        <label>Your Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" name="user_email" placeholder="Your Email" required>
+                        <label>Your Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                        <label>Message</label>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send
+                        Message</button>
+                </form>
+                <p id="contact-status" class="mt-4 text-green-600"></p>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-12">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <p>&copy; 2025 MyBlog. All Rights Reserved.</p>
+                <div class="mt-4 flex justify-center space-x-6 text-white text-2xl">
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-gray-100 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+</script>
+<script>
+   document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you for subscribing! (Demo)');
+        this.reset();
+    });
+
+    // Contact form with EmailJS
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = this;
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+            .then(() => {
+                document.getElementById('contact-status').innerText = 'Message sent successfully!';
+                form.reset();
+            }, (err) => {
+                document.getElementById('contact-status').innerText = 'Failed to send message.';
+                console.error(err);
+            });
+    });
+</script>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+
+<style>
+     @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out forwards;
+        }
+</style>
+
+</html>

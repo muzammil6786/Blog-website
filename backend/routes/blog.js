@@ -89,6 +89,9 @@ router.patch('/:id', authenticate, upload.single('image'), async (req, res) => {
 
         if (!updatedBlog) return res.status(404).json({ error: 'Blog not found' });
 
+        console.log("PATCH BODY:", req.body);
+        console.log("PATCH FILE:", req.file);
+
         res.json({
             msg: "The blog is updated successfully",
             blog: updatedBlog

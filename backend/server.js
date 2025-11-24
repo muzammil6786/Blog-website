@@ -8,6 +8,7 @@ const cors = require('cors');
 dotenv.config();
 
 const app = express();
+app.use('/uploads', express.static('uploads'));
 app.use(cors());
 app.use(express.json());
 
@@ -28,7 +29,11 @@ connectDB();
 
 app.use('/api/blogs', blogRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/uploads', express.static('uploads'));
+app.use((req, res, next) => {
+    console.log("HIT:", req.method, req.url);
+    next();
+});
+
 
 
 const PORT = process.env.PORT || 5000;
